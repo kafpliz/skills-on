@@ -6,9 +6,19 @@
     "skillsOn": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:application": {
+          "skipTests": true
+        },
         "@schematics/angular:component": {
           "path": "/src/app/components",
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -28,7 +38,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "public",
+                "output": ""
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -61,6 +76,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "skillsOn:build:production"
@@ -88,7 +106,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "public",
+                "output": ""
+              }
             ],
             "styles": [
               "src/styles.scss"
