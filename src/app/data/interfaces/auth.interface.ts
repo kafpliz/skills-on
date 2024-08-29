@@ -1,4 +1,4 @@
-export interface regData {
+export interface IRegData {
     firstname: string,
     lastName: string,
     email: string,
