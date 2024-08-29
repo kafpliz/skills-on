@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center;
+        }
+
+        .triangle-container {
+            position: relative;
+            width: 100px;
+            /* Ширина контейнера */
+            height: 100px;
+            /* Высота контейнера */
+
+        }
+
+      
+
+        .triangle::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 100%;
+            /* Позиция выпуклого конца */
+            margin-left: -10px;
+            /* Половина ширины выпуклого конца */
+            width: 20px;
+            /* Ширина выпуклого конца */
+            height: 20px;
+            /* Высота выпуклого конца */
+            background-color: #3498db;
+            /* Цвет выпуклого конца */
+            border-radius: 50%;
+            /* Закругление для создания выпуклости */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="triangle-container">
+        <div class="triangle"></div>
+    </div>
+
+</body>
+
+</html>
