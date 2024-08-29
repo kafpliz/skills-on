@@ -1,0 +1,63 @@
+<div class="main">
+    <div class="main_header">
+        <div class="z-main_header-back">
+            <div class="main_header-back">
+                <img src="/assets/icons/arrow_left.svg" class="header-back_icon" alt="" srcset="">
+                <span class="header-back__span">Назад</span>
+            </div>
+        </div>
+        <div class="z-main_header-logo">
+            <div class="main_header-logo">
+
+            </div>
+        </div>
+    </div>
+    <div class="main_form">
+        <div class="form_header">
+            <h3 class="form_header__span">Регистрация</h3>
+        </div>
+        <div class="form_progress">
+            <div class="progress_line"></div>
+            <div class="progress_line" [ngClass]="getProgressClasses()"></div>
+            <div class="form_progress_item"[ngStyle]='{"background": regProgress.first == true ? "#2871EE": "rgba(217, 217, 217, 1)"}'>
+                <div class="progress_item_number">1</div>
+              
+            </div>
+            <div class="form_progress_item"[ngStyle]='{"background": regProgress.second == true ? "#2871EE": "rgba(217, 217, 217, 1)"}'>
+                <div class="progress_item_number">2</div>
+      
+            </div>
+            <div class="form_progress_item"[ngStyle]='{"background": regProgress.third == true ? "#2871EE": "rgba(217, 217, 217, 1)"}'>
+                <div class="progress_item_number">3</div>
+            </div>
+        </div>
+        <div class="form" *ngIf="steps.first">
+            <div class="form-inp-grp">
+                <div class="inp_grp">
+                    <input type="text" class="form__input inp_grp__input" placeholder="Имя" [(ngModel)]="regData.firstname">
+                    <input type="text" class="form__input inp_grp__input" placeholder="Фамилия" [(ngModel)]="regData.lastName">
+                </div>
+                <input type="text" class="form__input" placeholder="Email" [(ngModel)]="regData.email">
+                <input type="text" class="form__input" placeholder="Пароль" [(ngModel)]="regData.password">
+                <input type="text" class="form__input" placeholder="Подтверждение пароля" [(ngModel)]="regData.confirmationPassword">
+                <span class="validate__span" *ngIf="!isValidate">* Заполните обязательные поля </span>
+            </div>
+            <div class="form-btn-grp">
+                <div class="btn-grp_item">
+                    <div class="form_btn" (click)="enterCode()"><span class="form_btn__span">Зарегестрироваться</span></div>
+                </div>
+                <div class="btn-grp_item">
+                    <input class="btn-grp_checkbox" type="checkbox" [(ngModel)]="value" />
+                    <span class="btn-grp_text">Нажимая на кнопку , я даю согласие на обработку персональных
+                        данных</span>
+                </div>
+            </div>
+            <span class="rederect" *ngIf="steps.first">Уже есть аккаунт? <span style="color: #2871EE;">Войти</span> </span>
+        </div>
+        <div class="emailCode" *ngIf="steps.second">
+                <span class="emailCode__span" >Введите код подтверждения,<br> отправленный на почту:</span>
+                <input class="form__input" placeholder="Введите код" [(ngModel)]="emailCode">
+            <div class="emailCode_btn" (click)="sendCode()">Отправить</div>
+        </div>
+    </div>
+</div>
