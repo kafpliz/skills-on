@@ -12,6 +12,6 @@
     "name": "Имя",
     "lastName": "Фамилия",
     "password": "Пароль",
-    "passwordConfirm": "Подтверждение пароля",
+    "passwordConfirm": "Подтверждение пароля"
   }
 }
