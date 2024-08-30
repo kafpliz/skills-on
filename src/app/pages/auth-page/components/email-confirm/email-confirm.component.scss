@@ -1,0 +1,48 @@
+.emailCode {
+  width: 360px;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.emailCode__span {
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #283739;
+}
+
+.emailCode_btn {
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  color: white;
+  width: 140px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2871EE;
+  border-radius: 32px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.form__input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid rgba(204, 204, 204, 1);
+  color: rgba(121, 121, 121, 1);
+  border-radius: 32px;
+  outline: none;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
