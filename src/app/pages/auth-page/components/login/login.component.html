@@ -1,0 +1,26 @@
+<ng-container *transloco="let t; prefix: translateKey">
+        <div class="form-wrapper">
+            <div class="form-wrapper__title">
+                <h3 class="form_header__span">{{t('loginTitle')}}</h3>
+            </div>
+            <form class="form">
+                <div class="form-inp-grp">
+                    <input type="text" class="form__input" placeholder="Email" >
+                    <input type="text" class="form__input" [placeholder]="t('password')" >
+                    <span class="validate__span" >{{t('required')}}</span>
+                </div>
+                <div class="form-btn-grp">
+                    <div class="btn-grp_item">
+                        <div class="form_btn" ><span class="form_btn__span">
+                         {{ t('register') }}
+                        </span></div>
+                    </div>
+
+                </div>
+                <a [routerLink]="['../', ROUTES.REGISTER]" class="rederect" >{{t('noAcc')}} <span style="color: #2871EE;">
+                  {{ t('noAccRegister') }}
+                </span> </a>
+            </form>
+
+        </div>
+</ng-container>

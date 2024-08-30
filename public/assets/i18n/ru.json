@@ -12,6 +12,9 @@
     "name": "Имя",
     "lastName": "Фамилия",
     "password": "Пароль",
-    "passwordConfirm": "Подтверждение пароля"
+    "passwordConfirm": "Подтверждение пароля",
+    "loginTitle": "Добро пожаловать!",
+    "noAcc": "Нет аккаунта?",
+    "noAccRegister": "Зарегестрироваться"
   }
 }
