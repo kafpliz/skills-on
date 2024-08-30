@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {LocationBackDirective} from "../../../../shared/directives/location-back.directive";
-import {TRANSLATE_KEY_TOKEN} from "../../../../core/tokens/translate-key.token";
 import {TranslocoDirective} from "@jsverse/transloco";
+import {TRANSLATE_KEY_TOKEN} from "../../../../data/tokens/translate-key.token";
 
 @Component({
   selector: 'app-back-button',

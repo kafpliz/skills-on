@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {RouterOutlet} from "@angular/router";
-import {TRANSLATE_KEY_TOKEN} from "../../core/tokens/translate-key.token";
 import {AuthPageHeaderComponent} from "./components/auth-page-header/auth-page-header.component";
+import {TRANSLATE_KEY_TOKEN} from "../../data/tokens/translate-key.token";
 
 @Component({
   selector: 'app-auth-page',

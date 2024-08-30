@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
-import {TRANSLATE_KEY_TOKEN} from "../../../../core/tokens/translate-key.token";
 import {TranslocoDirective} from "@jsverse/transloco";
+import {TRANSLATE_KEY_TOKEN} from "../../../../data/tokens/translate-key.token";
 
 @Component({
   selector: 'app-email-confirm',

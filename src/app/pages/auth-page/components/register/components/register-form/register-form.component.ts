@@ -1,9 +1,9 @@
 import {Component, inject} from '@angular/core';
 import {ERoutes} from "../../../../../../shared/enums/routes.enum";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {TRANSLATE_KEY_TOKEN} from "../../../../../../core/tokens/translate-key.token";
 import {TranslocoDirective} from "@jsverse/transloco";
 import {RouterLink} from "@angular/router";
+import {TRANSLATE_KEY_TOKEN} from "../../../../../../data/tokens/translate-key.token";
 
 @Component({
   selector: 'app-register-form',

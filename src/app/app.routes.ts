@@ -13,6 +13,11 @@ export const routes: Routes = [
   {path: ERoutes.AUTH, component: AuthPageComponent,
     children: [
       {
+        path: '',
+        redirectTo: ERoutes.REGISTER,
+        pathMatch: 'full',
+      },
+      {
         path: ERoutes.REGISTER,
         component: RegisterComponent,
         children: [
