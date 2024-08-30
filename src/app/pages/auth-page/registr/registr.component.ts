@@ -1,18 +1,17 @@
 import { CommonModule } from '@angular/common';
-import {Component, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {AuthService} from "../../core/services/auth/auth.service";
-import {TranslocoDirective} from "@jsverse/transloco";
-import {TRANSLATE_KEY_TOKEN} from "../../core/tokens/translate-key.token";
-import {IRegData} from "../../data/interfaces/auth.interface";
-
+import { AuthService } from "../../../core/services/auth/auth.service";
+import { TranslocoDirective } from "@jsverse/transloco";
+import { TRANSLATE_KEY_TOKEN } from "../../../core/tokens/translate-key.token";
+import { IRegData } from "../../../data/interfaces/auth.interface";
 
 @Component({
-  selector: 'app-auth',
+  selector: 'app-registr',
   standalone: true,
   imports: [FormsModule, CommonModule, TranslocoDirective],
-  templateUrl: './auth.component.html',
-  styleUrl: './auth.component.scss',
+  templateUrl: './registr.component.html',
+  styleUrl: './registr.component.scss',
   providers: [
     {
       provide: TRANSLATE_KEY_TOKEN,
@@ -20,7 +19,7 @@ import {IRegData} from "../../data/interfaces/auth.interface";
     }
   ]
 })
-export class AuthComponent{
+export class RegistrComponent {
   private _authService = inject(AuthService)
   public translateKey = inject(TRANSLATE_KEY_TOKEN)
 

@@ -1,0 +1,167 @@
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 56px 140px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    position: relative;
+
+}
+
+.z-main_header-back {
+    width: 90px;
+    height: 100%;
+}
+
+.main_header-back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-back_icon {
+    width: 14px;
+}
+
+.header-back__span {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgba(40, 113, 238, 1);
+}
+
+.z-main_header-logo {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main_header-logo {
+    width: 180px;
+    height: 100%;
+
+}
+
+.form-wrapper {
+    width: 560px;
+    min-height: 568px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.form-wrapper__title {
+    width: 100%;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.form_header__span {
+    color: rgba(40, 55, 57, 1);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.form {
+    width: 100%;
+    min-height: 368px;
+    display: flex;
+    flex-direction: column;
+    gap: 68px;
+    align-items: center;
+}
+
+.form-inp-grp {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.inp_grp {
+    height: 52px;
+    display: flex;
+    gap: 16px;
+}
+
+.inp_grp__input {
+    flex: 1 1;
+}
+
+.form__input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid rgba(204, 204, 204, 1);
+    color: rgba(121, 121, 121, 1);
+    border-radius: 32px;
+    outline: none;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.form-btn-grp {
+    height: 44px;
+    display: flex;
+    gap: 16px;
+}
+
+.btn-grp_item {
+    width: 224px;
+}
+
+.form_btn {
+    height: 100%;
+    border-radius: 32px;
+    background: #2871EE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form_btn__span {
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: #F5F5F5;
+}
+.rederect {
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: #283739;
+}
+
+.validate__span {
+    color: #FF8368;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

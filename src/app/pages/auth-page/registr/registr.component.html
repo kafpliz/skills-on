@@ -1,0 +1,69 @@
+<ng-container *transloco="let t; prefix: translateKey">
+    <div class="wrapper">
+        <header class="header">
+            <div class="z-main_header-back">
+                <div class="main_header-back">
+                    <img src="/assets/icons/arrow_left.svg" class="header-back_icon" alt="" srcset="">
+                    <span class="header-back__span">{{t('back')}}</span>
+                </div>
+            </div>
+            <div class="z-main_header-logo">
+                <div class="main_header-logo">
+                <img src="/assets/logotips/skillson_logo.png"/>
+                </div>
+            </div>
+        </header>
+        <div class="form-wrapper">
+            <div class="form-wrapper__title">
+                <h3 class="form_header__span">{{t('register')}}</h3>
+            </div>
+            <div class="form_progress">
+                <div class="progress_line"></div>
+                <div class="progress_line" ></div>
+                <div class="form_progress_item">
+                    <div class="progress_item_number">1</div>
+    
+                </div>
+                <div class="form_progress_item" >
+                    <div class="progress_item_number">2</div>
+    
+                </div>
+                <div class="form_progress_item">
+                    <div class="progress_item_number">3</div>
+                </div>
+            </div>
+            <form class="form">
+                <div class="form-inp-grp">
+                    <div class="inp_grp">
+                        <input type="text" class="form__input inp_grp__input" [placeholder]="t('name')" >
+                        <input type="text" class="form__input inp_grp__input" [placeholder]="t('lastName')" >
+                    </div>
+                    <input type="text" class="form__input" placeholder="Email" >
+                    <input type="text" class="form__input" [placeholder]="t('password')" >
+                    <input type="text" class="form__input" [placeholder]="t('passwordConfirm')" >
+                    <span class="validate__span" >{{t('required')}} </span>
+                </div>
+                <div class="form-btn-grp">
+                    <div class="btn-grp_item">
+                        <div class="form_btn" ><span class="form_btn__span">
+                          {{t('register')}}
+                        </span></div>
+                    </div>
+                    <div class="btn-grp_item">
+                        <input class="btn-grp_checkbox" type="checkbox" />
+                        <span class="btn-grp_text">{{t('confirm')}}</span>
+                    </div>
+                </div>
+                <span class="rederect" >{{t('hasAccount')}} <span style="color: #2871EE;">
+                  {{t('login')}}
+                </span> </span>
+            </form>
+            <div class="emailCode" >
+                    <span class="emailCode__span" >{{t('emailCode')}}</span>
+                    <input class="form__input" [placeholder]="t('enterCode')" >
+                <div class="emailCode_btn" >{{t('send')}}</div>
+            </div>
+        </div>
+    </div>
+    </ng-container>
+    
