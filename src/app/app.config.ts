@@ -16,5 +16,5 @@ export const appConfig: ApplicationConfig = {
           prodMode: !isDevMode(),
         },
         loader: TranslocoHttpLoader
-      })]
+      }),]
 };

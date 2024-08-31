@@ -1,29 +1,29 @@
 <ng-container *transloco="let t; prefix: translateKey">
-<form class="form">
-  <div class="form-inp-grp">
-    <div class="inp_grp">
-      <input type="text" class="form__input inp_grp__input" [placeholder]="t('name')" >
-      <input type="text" class="form__input inp_grp__input" [placeholder]="t('lastName')" >
+  <form class="form" [formGroup]="userForm">
+    <div class="form-inp-grp">
+      <div class="inp_grp">
+        <input type="text" class="form__input inp_grp__input" [placeholder]="t('name')" formControlName="first_name">
+        <input type="text" class="form__input inp_grp__input" [placeholder]="t('lastName')" formControlName="last_name">
+      </div>
+      <input type="text" class="form__input" placeholder="Email" formControlName="email">
+      <input type="text" class="form__input" [placeholder]="t('password')" formControlName='password'>
+      <input type="text" class="form__input" [placeholder]="t('passwordConfirm')">
+      <span class="validate__span" *ngIf="!isValid">{{t('required')}} </span>
     </div>
-    <input type="text" class="form__input" placeholder="Email" >
-    <input type="text" class="form__input" [placeholder]="t('password')" >
-    <input type="text" class="form__input" [placeholder]="t('passwordConfirm')" >
-    <span class="validate__span" >{{t('required')}} </span>
-  </div>
-  <div class="form-btn-grp">
-    <div class="btn-grp_item">
-      <div class="form_btn" ><span class="form_btn__span">
-                          {{t('register')}}
-                        </span></div>
+    <div class="form-btn-grp">
+      <div class="btn-grp_item">
+        <div class="form_btn" (click)="onRegister()"><span class="form_btn__span">
+            {{t('register')}}
+          </span></div>
+      </div>
+      <div class="btn-grp_item">
+        <input class="btn-grp_checkbox" type="checkbox" formControlName="deal"/>
+        <span class="btn-grp_text" >{{t('confirm')}}</span>
+      </div>
     </div>
-    <div class="btn-grp_item">
-      <input class="btn-grp_checkbox" type="checkbox" />
-      <span class="btn-grp_text">{{t('confirm')}}</span>
-    </div>
-  </div>
 
-</form>
-  <a [routerLink]="['../',ROUTES.LOGIN]" class="rederect" >{{t('hasAccount')}} <span style="color: #2871EE;">
-                  {{t('login')}}
-                </span> </a>
+  </form>
+  <a [routerLink]="['../',ROUTES.LOGIN]" class="rederect">{{t('hasAccount')}} <span style="color: #2871EE;">
+      {{t('login')}}
+    </span> </a>
 </ng-container>
