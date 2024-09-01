@@ -1,6 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {TranslocoDirective} from "@jsverse/transloco";
 import {TRANSLATE_KEY_TOKEN} from "../../../../data/tokens/translate-key.token";
+import { AuthService } from '../../../../core/services/auth/auth.service';
 
 @Component({
   selector: 'app-email-confirm',
@@ -13,4 +14,11 @@ import {TRANSLATE_KEY_TOKEN} from "../../../../data/tokens/translate-key.token";
 })
 export class EmailConfirmComponent {
   public readonly translateKey = inject(TRANSLATE_KEY_TOKEN)
+
+  readonly authService = inject(AuthService)
+  public email = this.authService.getEmail()
+  ngOnInit(){
+    console.log(this.email);
+    
+  }
 }

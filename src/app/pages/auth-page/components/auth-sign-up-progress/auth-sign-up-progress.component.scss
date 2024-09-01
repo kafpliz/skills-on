@@ -1,0 +1,56 @@
+.form_progress {
+    height: 20px;
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress_line {
+    position: absolute;
+    background: rgba(217, 217, 217, 1);
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    z-index: -1;
+}
+
+.progress_line:nth-child(2) {
+    background: linear-gradient(90deg, rgba(40, 113, 238, 1) 39%, rgba(204, 204, 204, 1) 88%);
+    transition: all .3s ease-in-out;
+    width: 45%;
+}
+
+.form_progress_item {
+    width: 20px;
+    height: 20px;
+    background: rgba(217, 217, 217, 1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.progress-first {
+    width: 43%;
+}
+
+.progress-second {
+    width: 100%;
+}
+
+.progress-third {
+    width: 150%;
+}
+
+.progress_item_number {
+    color: white;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}

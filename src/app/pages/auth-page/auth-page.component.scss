@@ -6,12 +6,10 @@
   flex-direction: column;
   align-items: center;
 }
-
-.form-wrapper {
-  width: 560px;
-  min-height: 568px;
+.container{
   display: flex;
   flex-direction: column;
   gap: 40px;
   align-items: center;
+  padding: 43px 0 0 0;
 }

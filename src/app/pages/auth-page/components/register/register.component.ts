@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from "../../../../core/services/auth/auth.service";
+
 import { TranslocoDirective } from "@jsverse/transloco";
 import { RouterLink, RouterOutlet } from "@angular/router";
 import { ERoutes } from "../../../../shared/enums/routes.enum";
@@ -22,7 +22,7 @@ export class RegisterComponent {
   public readonly translateKey = inject(TRANSLATE_KEY_TOKEN)
   public readonly ROUTES = ERoutes
 
-  constructor(private authService: AuthService) { }
+ 
 
   
 
