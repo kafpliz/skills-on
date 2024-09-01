@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class EmailConfirmComponent {
   public readonly translateKey = inject(TRANSLATE_KEY_TOKEN)
-  public emailCode: string = ''
+  public emailCode: number | any;
   readonly authService = inject(AuthService)
   public email = this.authService.getEmail()
 
@@ -25,7 +25,10 @@ export class EmailConfirmComponent {
 
   }
   sendCode() {
-    this.authService.confirmEmail(this.emailCode).subscribe((data) => {
+   console.log(this.emailCode);
+   console.log(typeof this.emailCode);
+    
+    this.authService.confirmEmail(Number(this.emailCode)).subscribe((data) => {
       console.log(data);
 
     })

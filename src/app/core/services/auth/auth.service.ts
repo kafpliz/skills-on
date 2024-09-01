@@ -31,7 +31,7 @@ export class AuthService {
     return this.email
   }
 
-  confirmEmail(code:string){
+  confirmEmail(code:number){
     return this.http.post(authApi.url + authApi.confirm,  {code})
   }
 
