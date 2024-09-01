@@ -1,7 +1,7 @@
 <ng-container *transloco="let t; prefix: translateKey">
   <div class="emailCode" >
     <span class="emailCode__span" >{{t('emailCode')}}</span>
-    <input class="form__input" [placeholder]="t('enterCode')" >
-    <div class="emailCode_btn" >{{t('send')}}</div>
+    <input class="form__input" [placeholder]="t('enterCode')" [(ngModel)]="emailCode" >
+    <div class="emailCode_btn" (click)="sendCode()">{{t('send')}}</div>
   </div>
 </ng-container>
