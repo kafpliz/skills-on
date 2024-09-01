@@ -7,10 +7,10 @@ import { authApi } from '../../../shared/enums/authApi.enum';
 })
 export class AuthService {
 
-  constructor(private authApi: authApi) { }
+  readonly #authApi = authApi;
 
   register(data: IRegData) {
     console.log(data);
-    
+
   }
 }
