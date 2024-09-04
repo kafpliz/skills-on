@@ -3,5 +3,6 @@ export enum ERoutes {
   AUTH = 'auth',
   REGISTER = 'register',
   LOGIN = 'login',
-  CONFIRM = 'confirm'
+  CONFIRM = 'confirm',
+  SELECT = 'select'
 }

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ERoutes } from "../../../../../../shared/enums/routes.enum";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { TranslocoDirective } from "@jsverse/transloco";
-import { ActivatedRoute, Router, RouterLink } from "@angular/router";
+import { ActivatedRoute, Route, Router, RouterLink } from "@angular/router";
 import { TRANSLATE_KEY_TOKEN } from "../../../../../../data/tokens/translate-key.token";
 import { AuthService } from '../../../../../../core/services/auth/auth.service';
 import { CommonModule } from '@angular/common';
@@ -27,7 +27,7 @@ export class RegisterFormComponent {
   deal: boolean = true;
   protected readonly ROUTES = ERoutes;
   public readonly translateKey = inject(TRANSLATE_KEY_TOKEN)
-  #activatedRoute  = inject(ActivatedRoute)
+  #activatedRoute = inject(ActivatedRoute)
 
   constructor(private authService: AuthService, private router: Router) {
     this.userForm = new FormGroup({
@@ -39,21 +39,13 @@ export class RegisterFormComponent {
 
     })
   }
- 
+
   onRegister() {
 
     if (this.userForm.valid && this.userForm.value.deal) {
 
-      this.authService.register(this.userForm.value).subscribe((data:any) => {
-        console.log(data);
-        if(data.detail == 'ok'){
-          this.authService.setEmail(this.userForm.value.email)
-          this.router.navigate([ERoutes.CONFIRM], {relativeTo: this.#activatedRoute})
-          
-          
-
-        }
-      })
+      this.authService.register(this.userForm.value)
+      this.router.navigate([ERoutes.CONFIRM], { relativeTo: this.#activatedRoute })
     } else {
       this.isValid = false;
     }

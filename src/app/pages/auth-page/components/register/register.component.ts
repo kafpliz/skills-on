@@ -1,18 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { AuthService } from "../../../../core/services/auth/auth.service";
 import { TranslocoDirective } from "@jsverse/transloco";
 import { RouterLink, RouterOutlet } from "@angular/router";
 import { ERoutes } from "../../../../shared/enums/routes.enum";
 import { LocationBackDirective } from "../../../../shared/directives/location-back.directive";
 import { BackButtonComponent } from "../back-button/back-button.component";
 import { TRANSLATE_KEY_TOKEN } from "../../../../data/tokens/translate-key.token";
+import { AuthProgressComponent } from '../auth-progress/auth-progress.component';
+import { AuthTitleComponent } from '../auth-title/auth-title.component';
 
 @Component({
   selector: 'app-register-form',
   standalone: true,
-  imports: [FormsModule, CommonModule, TranslocoDirective, RouterLink, LocationBackDirective, BackButtonComponent, RouterOutlet],
+  imports: [FormsModule, CommonModule, TranslocoDirective, RouterLink, LocationBackDirective, BackButtonComponent, RouterOutlet, AuthProgressComponent, AuthTitleComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
@@ -22,7 +24,7 @@ export class RegisterComponent {
   public readonly translateKey = inject(TRANSLATE_KEY_TOKEN)
   public readonly ROUTES = ERoutes
 
- 
+  constructor(private authService: AuthService) { }
 
   
 

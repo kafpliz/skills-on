@@ -31,9 +31,11 @@
 }
 
 .form-wrapper {
-    width: 560px;
+    width: 100%;
     min-height: 568px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
 }
 
