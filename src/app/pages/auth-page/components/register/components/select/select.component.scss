@@ -11,12 +11,14 @@
 }
 
 .wrapper_item:nth-child(1) {
-    width: 620px;
-
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .header__h2 {
-    font-family: Bartina;
+    font-family: BartinaRegular;
     font-size: 64px;
     font-style: normal;
     font-weight: 400;
@@ -37,7 +39,7 @@
     flex: 1 1;
 }
 .swiper-container{
-    width: 100%;
+    width: 741px;
     height: 100%;
 }
 .swiper{

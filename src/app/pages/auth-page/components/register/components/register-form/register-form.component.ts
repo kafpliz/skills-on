@@ -43,9 +43,13 @@ export class RegisterFormComponent {
   onRegister() {
 
     if (this.userForm.valid && this.userForm.value.deal) {
-
-      this.authService.register(this.userForm.value)
-      this.router.navigate([ERoutes.CONFIRM], { relativeTo: this.#activatedRoute })
+      console.log(this.userForm.value);
+      
+      this.authService.register(this.userForm.value).subscribe(data=> {
+        console.log(data);
+        
+      })
+    //  this.router.navigate([ERoutes.CONFIRM], { relativeTo: this.#activatedRoute })
     } else {
       this.isValid = false;
     }
