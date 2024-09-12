@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { IRegData } from '../../../shared/interface/auth.interface';
+import { IRegData } from '../../../data/interface/auth.interface';
 import { authApi } from '../../../shared/enums/authApi.enum';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   readonly #authApi = authApi;
-  http:HttpClient = inject(HttpClient)
+ private http:HttpClient = inject(HttpClient)
 
   register(data: IRegData) {
     const fd: FormData = new FormData();
@@ -17,7 +17,18 @@ export class AuthService {
     fd.append('last_name', data.last_name)
     fd.append('password', data.password)
     fd.append('email', data.email)
-    return this.http.post(authApi.url + authApi.userData, fd)
+    return this.http.post('/api/' + authApi.url + authApi.userData, fd)
     
+  }
+
+  sendCode(code:number){
+    const data = {code: code}
+
+    return this.http.post('/api/' + authApi.url + authApi.confirm, data )
+
+
+  }
+  getInterests(){
+    return this.http.get('/api/' + authApi.url + authApi.interests, )
   }
 }

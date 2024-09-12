@@ -4,5 +4,5 @@ export enum ERoutes {
   REGISTER = 'register',
   LOGIN = 'login',
   CONFIRM = 'confirm',
-  SELECT = 'select'
+  SELECT = 'select',
 }

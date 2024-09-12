@@ -1,16 +1,27 @@
 <div class="wrapper">
-    <div class="wrapper_item">
-        <h2 class="header__h2">Пожалуйста, укажите интересующие вас направления</h2>
-        <span class="header__span">Это нужно чтобы персонализировать <br> предложения курсов для вас</span>
-    </div>
-    <div class="wrapper_item">
-        <div class="swiper-container">
-            <swiper-container class="swiper" slides-per-view="1">
-                <swiper-slide class="swiper-slide">Slide 1</swiper-slide>
-                <swiper-slide class="swiper-slide">Slide 2</swiper-slide>
-                <swiper-slide class="swiper-slide">Slide 3</swiper-slide>
-       
-              </swiper-container>
+    <div class="interests">
+        <div class="interests_item">
+            <h2 class="header__h2">Пожалуйста, укажите интересующие вас направления</h2>
+            <span class="header__span">Это нужно чтобы персонализировать <br> предложения курсов для вас</span>
         </div>
+        <div class="interests_item">
+            <div class="swiper-container">
+                <app-swiper  class="swiper" [slides]="store.interests()"/>
+
+                <!-- <swiper-container class="swiper" slides-per-view="1">
+                    <swiper-slide class="swiper-slide" *ngFor="let items of allInterests">
+                        <div class="slide_item" *ngFor="let item of items;">
+                            <span class="slide_item__span"  [attr.data-select]="item.id" (click)="selectItem($event)">{{item.title}}</span>
+                        </div>
+
+                    </swiper-slide>
+
+
+                </swiper-container> -->
+            </div>
+        </div>
+    </div>
+    <div class="btn">
+        <span class="btn__span">Продолжить</span>
     </div>
 </div>

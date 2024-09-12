@@ -1,0 +1,8 @@
+<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="2" grid-rows="4"
+                  space-between="0">
+  @for (s of slides(); track s.id) {
+    <swiper-slide>
+    <app-slider-item [isSelected]="store.isSelected(s)"  (onSelect)="onSelect($event)"  [interest]="s" >{{s.title}}</app-slider-item>
+    </swiper-slide>
+  }
+</swiper-container>
