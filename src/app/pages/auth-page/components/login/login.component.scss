@@ -1,3 +1,12 @@
+:host {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .wrapper {
     width: 100%;
     min-height: 100vh;
@@ -7,17 +16,6 @@
     gap: 43px;
     align-items: center;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .form-wrapper {
     width: 560px;
@@ -48,7 +46,7 @@
     min-height: 368px;
     display: flex;
     flex-direction: column;
-    gap: 68px;
+    gap: 40px;
     align-items: center;
 }
 
@@ -111,6 +109,7 @@
     line-height: 20px;
     color: #F5F5F5;
 }
+
 .rederect {
     font-family: Roboto;
     font-size: 18px;
@@ -118,6 +117,7 @@
     font-weight: 400;
     line-height: 20px;
     color: #283739;
+    text-decoration: none;
 }
 
 .validate__span {
@@ -128,4 +128,15 @@
     font-weight: 400;
     line-height: 20px;
     transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.forgot-password {
+    color: #2871EE;
+
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    cursor: pointer;
 }

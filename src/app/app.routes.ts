@@ -11,6 +11,8 @@ import {
   EmailConfirmComponent
 } from "./pages/auth-page/components/register/components/email-confirm/email-confirm.component";
 import { SelectComponent } from './pages/auth-page/components/register/components/select/select.component';
+import { SuccessfullyComponent } from './pages/auth-page/components/register/components/successfully/successfully.component';
+import { MainComponent } from './pages/main/main.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +39,10 @@ export const routes: Routes = [
             path: ERoutes.SELECT,
             component: SelectComponent
           },
+          {
+            path: ERoutes.SUCCESSFULLY,
+            component: SuccessfullyComponent
+          },
         ]
       },
       {
@@ -45,5 +51,7 @@ export const routes: Routes = [
       },
 
     ]
-  }
+  },
+  { path: ERoutes.HOME, component: MainComponent },
+  { path: ERoutes.RESET_PASSWORD, component: MainComponent },
 ];

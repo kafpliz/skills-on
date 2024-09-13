@@ -8,12 +8,12 @@
       </div>
       <input type="text" class="form__input" placeholder="Email" formControlName="email">
       <input type="text" class="form__input" [placeholder]="t('password')" formControlName='password'>
-      <input type="text" class="form__input" [placeholder]="t('passwordConfirm')">
-      <span class="validate__span" *ngIf="!isValid">{{t('required')}} </span>
+      <input type="text" class="form__input" [placeholder]="t('passwordConfirm')" formControlName="confirmPassword">
+      <span class="validate__span" *ngIf="!isValid">{{errorText}}</span>
     </div>
     <div class="form-btn-grp">
       <div class="btn-grp_item">
-        <div class="form_btn" (click)="onRegister()"><span class="form_btn__span">
+        <div class="form_btn " (click)="onRegister()" ><span class="form_btn__span">
             {{t('register')}}
           </span></div>
       </div>

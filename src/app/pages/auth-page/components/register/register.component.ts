@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from "../../../../core/services/auth/auth.service";
 import { TranslocoDirective } from "@jsverse/transloco";
-import { RouterLink, RouterOutlet } from "@angular/router";
+import { Router, RouterLink, RouterOutlet } from "@angular/router";
 import { ERoutes } from "../../../../shared/enums/routes.enum";
 import { LocationBackDirective } from "../../../../shared/directives/location-back.directive";
 import { BackButtonComponent } from "../back-button/back-button.component";
@@ -20,12 +20,17 @@ import { AuthTitleComponent } from '../auth-title/auth-title.component';
 })
 export class RegisterComponent {
   checkbox: boolean = true;
-
+  #router:Router = inject(Router)
+  title:string = 'Регистрация'
   public readonly translateKey = inject(TRANSLATE_KEY_TOKEN)
   public readonly ROUTES = ERoutes
 
   constructor(private authService: AuthService) { }
 
-  
+  ngOnInit(){
+    if(this.#router.url == '/auth/register/successfully'){
+      this.title = 'Регистрация прошла успешно!'
+    }
+  }
 
 }

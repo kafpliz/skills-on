@@ -3,16 +3,16 @@
             <div class="form-wrapper__title">
                 <h3 class="form_header__span">{{t('loginTitle')}}</h3>
             </div>
-            <form class="form">
+            <form class="form" [formGroup]="loginForm">
                 <div class="form-inp-grp">
-                    <input type="text" class="form__input" placeholder="Email" >
-                    <input type="text" class="form__input" [placeholder]="t('password')" >
-                    <span class="validate__span" >{{t('required')}}</span>
+                    <input type="text" class="form__input" placeholder="Email" formControlName="email">
+                    <input type="text" class="form__input" [placeholder]="t('password')" formControlName="password">
+                    <span class="validate__span" *ngIf="!isValid">{{errorText}}</span>
                 </div>
                 <div class="form-btn-grp">
                     <div class="btn-grp_item">
-                        <div class="form_btn" ><span class="form_btn__span">
-                         {{ t('register') }}
+                        <div class="form_btn" (click)="login()"><span class="form_btn__span">
+                            Войти
                         </span></div>
                     </div>
 
@@ -21,6 +21,6 @@
                   {{ t('noAccRegister') }}
                 </span> </a>
             </form>
-
+            <span class="forgot-password" routerLink="/reset">Зыбыли пароль</span>
         </div>
 </ng-container>

@@ -5,4 +5,6 @@ export enum ERoutes {
   LOGIN = 'login',
   CONFIRM = 'confirm',
   SELECT = 'select',
+  SUCCESSFULLY = 'successfully',
+  RESET_PASSWORD = 'reset'
 }

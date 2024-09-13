@@ -32,28 +32,38 @@ export class RegisterFormComponent {
   #authService: AuthService = inject(AuthService)
   #router: Router = inject(Router)
   #authData: AuthDataService = inject(AuthDataService)
+  errorText: string = 'Заполните все обязательные поля!'
 
   constructor() {
     this.userForm = new FormGroup({
       first_name: new FormControl('', [Validators.required]),
       last_name: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
+      confirmPassword: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       deal: new FormControl('', [Validators.required]),
-
     })
+
   }
+
 
   onRegister() {
 
+  
     if (this.userForm.valid && this.userForm.value.deal) {
       console.log(this.userForm.value);
+      if (this.userForm.value.password != this.userForm.value.confirmPassword) {
+        this.errorText = 'Пароли не совпадают!'
+        this.isValid = false;
+      } else {
+        this.#authService.register(this.userForm.value).subscribe((data: any) => {
+          console.log(data);
+            this.#authData.setEmailCode(data.code)
+            this.#router.navigate([ ERoutes.CONFIRM], { relativeTo: this.#activatedRoute })
+        })
 
-      this.#authService.register(this.userForm.value).subscribe((data: any) => {
-        console.log(data);
-          this.#authData.setEmailCode(data.code)
-          this.#router.navigate([ ERoutes.CONFIRM], { relativeTo: this.#activatedRoute })
-      })
+      }
+    
 
     } else {
       this.isValid = false;
