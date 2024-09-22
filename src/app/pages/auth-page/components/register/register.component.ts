@@ -22,15 +22,25 @@ export class RegisterComponent {
   checkbox: boolean = true;
   #router:Router = inject(Router)
   title:string = 'Регистрация'
+  number:number = 10;
+  isStepper:boolean = true
   public readonly translateKey = inject(TRANSLATE_KEY_TOKEN)
   public readonly ROUTES = ERoutes
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(){
-    if(this.#router.url == '/auth/register/successfully'){
-      this.title = 'Регистрация прошла успешно!'
+    switch (this.#router.url ) {
+
+      case '/auth/register/successfully':
+        this.title = 'Регистрация прошла успешно!'
+        this.isStepper = false
+        break;
+    
+     
     }
+   
+    
   }
 
 }

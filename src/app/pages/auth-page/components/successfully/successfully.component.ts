@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ERoutes } from '../../../../../../shared/enums/routes.enum';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { ERoutes } from '../../../../shared/enums/routes.enum';
 
 @Component({
   selector: 'app-successfully',
@@ -11,4 +11,9 @@ import { ERoutes } from '../../../../../../shared/enums/routes.enum';
 })
 export class SuccessfullyComponent {
   protected readonly ROUTES = ERoutes;
+
+
+  ngOnInit(){
+   
+  }
 }

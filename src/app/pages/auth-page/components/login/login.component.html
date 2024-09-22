@@ -21,6 +21,6 @@
                   {{ t('noAccRegister') }}
                 </span> </a>
             </form>
-            <span class="forgot-password" routerLink="/reset">Зыбыли пароль</span>
+            <span class="forgot-password" [routerLink]="['../', ROUTES.RESET_PASSWORD]">Зыбыли пароль</span>
         </div>
 </ng-container>

@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div class="wrapper_grp">
+      <form class="wrapper_grp__inputs" [formGroup]="resetPaswordForm">
+        <input type="text" class="wrapper_grp__input" (focus)="moveLabel()" (blur)="checkInp()" formControlName="email" [ngClass]="{'wrapper_valid-border': !formValid }">
+        <span class="wrapper_grp__input-star" *ngIf="!formValid">*</span>
+        <label type="text" class="wrapper_grp__label" [ngClass]="{'wrapper_grp__label-moving': isMoving, 'wrapper_valid-text': !formValid  }">Email</label>
+      </form>
+        <div class="">
+            <span class="wrapper_grp__span" *ngIf="!formValid">* {{errText}}</span>
+        </div>
+    </div>
+    <button class="wrapper_btn" (click)="sendEmail()" [ngClass]="{'wrapper_btn__valid': formValid && resetPaswordForm.valid}">
+        <span class="wrapper_btn__span" >Выслать код</span>
+    </button>
+</div>

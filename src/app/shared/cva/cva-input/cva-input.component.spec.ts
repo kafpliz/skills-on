@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SuccessfullyComponent } from './successfully.component';
+import { CvaInputComponent } from './cva-input.component';
 
-describe('SuccessfullyComponent', () => {
-  let component: SuccessfullyComponent;
-  let fixture: ComponentFixture<SuccessfullyComponent>;
+describe('CvaInputComponent', () => {
+  let component: CvaInputComponent;
+  let fixture: ComponentFixture<CvaInputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SuccessfullyComponent]
+      imports: [CvaInputComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SuccessfullyComponent);
+    fixture = TestBed.createComponent(CvaInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -11,8 +11,13 @@ import {
   EmailConfirmComponent
 } from "./pages/auth-page/components/register/components/email-confirm/email-confirm.component";
 import { SelectComponent } from './pages/auth-page/components/register/components/select/select.component';
-import { SuccessfullyComponent } from './pages/auth-page/components/register/components/successfully/successfully.component';
+import { SuccessfullyComponent } from './pages/auth-page/components/successfully/successfully.component';
 import { MainComponent } from './pages/main/main.component';
+import { ResetPasswordComponent } from './pages/auth-page/components/reset-password/reset-password.component';
+
+import { SendCodeComponent } from './pages/auth-page/components/reset-password/components/send-code/send-code.component';
+import { ConfirmPasswordComponent } from './pages/auth-page/components/reset-password/components/confirm-password/confirm-password.component';
+import { UpdatePasswordComponent } from './pages/auth-page/components/reset-password/components/update-password/update-password.component';
 
 export const routes: Routes = [
   {
@@ -49,9 +54,21 @@ export const routes: Routes = [
         path: ERoutes.LOGIN,
         component: LoginComponent
       },
+      {
+        path: ERoutes.RESET_PASSWORD,
+        component: ResetPasswordComponent,
+        children: [
+          {path: '', redirectTo: ERoutes.SEND, pathMatch: 'full'},
+          {path: ERoutes.SEND, component: SendCodeComponent},
+          {path: ERoutes.CONFIRM, component: ConfirmPasswordComponent},
+          {path: ERoutes.UPDATE, component: UpdatePasswordComponent},
+          {path: ERoutes.SUCCESSFULLY, component: SuccessfullyComponent},
+        ]
+      },
+
 
     ]
   },
   { path: ERoutes.HOME, component: MainComponent },
-  { path: ERoutes.RESET_PASSWORD, component: MainComponent },
+
 ];

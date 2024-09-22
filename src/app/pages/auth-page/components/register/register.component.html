@@ -1,7 +1,7 @@
 <ng-container *transloco="let t; prefix: translateKey">
         <div class="form-wrapper">
            <app-auth-title [title]="title"/>
-            <app-auth-progress />
+            <app-auth-progress *ngIf="isStepper"/>
             <router-outlet></router-outlet>
         </div>
 </ng-container>

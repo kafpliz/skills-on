@@ -1,13 +1,14 @@
-import { ApplicationConfig, isDevMode } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@jsverse/transloco';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(), provideTransloco({
+  providers: [provideRouter(routes), provideHttpClient(),   provideAnimations(), provideTransloco({
         config: { 
           availableLangs: ['ru'],
           defaultLang: 'ru',

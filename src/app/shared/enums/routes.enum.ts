@@ -6,5 +6,7 @@ export enum ERoutes {
   CONFIRM = 'confirm',
   SELECT = 'select',
   SUCCESSFULLY = 'successfully',
-  RESET_PASSWORD = 'reset'
+  RESET_PASSWORD = 'reset',
+  SEND = 'send',
+  UPDATE = 'update',
 }
