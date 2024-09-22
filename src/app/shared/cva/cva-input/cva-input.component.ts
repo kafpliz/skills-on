@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, input } from '@angular/core';
-import { ControlValueAccessor,  NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, Injector, forwardRef, inject, input } from '@angular/core';
+import { ControlValueAccessor, FormControl, FormControlName, FormGroupDirective, NG_VALUE_ACCESSOR, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-cva-input',
@@ -16,19 +16,45 @@ import { ControlValueAccessor,  NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 
 export class CvaInputComponent implements ControlValueAccessor {
-  private _value: any;
   public readonly placeholder = input('')
+  isMoving: boolean = false
+  public readonly valid = input(true)
+ 
+  public formControl!: FormControl;
+
+  #injector = inject(Injector)
+
  
 
-  onChange(_: any) { }
+  moveLabel() {
+    this.isMoving = true
+  }
 
-  writeValue(value: any) {
+  checkInp() {}
+public value = ''
+
+
+  onChange : any = () => {}; 
+  onTouched : any = () => {}; 
+
+  changeValue(data:any){
+
+    this.value = data.target.value
+    this.onChange()
+  }
+  writeValue(data: string) {
+    this.value = data
 
   }
 
   registerOnChange(fn: any) {
+  
+    this.onChange = fn
+   }
 
+  registerOnTouched(fn:any) { 
+
+    this.onTouched = fn
   }
 
-  registerOnTouched() { }
 }

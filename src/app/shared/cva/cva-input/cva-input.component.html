@@ -1,5 +1,7 @@
 <div class="wrapper_grp_item">
-    <input type="text" class="wrapper_grp__input"  formControlName="password" >
-    <span class="wrapper_grp__input-star">*</span>
-    <label type="text" class="wrapper_grp__label" >Код восстановления</label>
+    <input type="text" class="wrapper_grp__input" (focus)="moveLabel()" (blur)="checkInp()" [ngClass]="{'wrapper_valid-border': !valid()}" (change)="changeValue($event)">
+    <span class="wrapper_grp__input-star" *ngIf="!valid()">*</span>
+    <span type="text" class="wrapper_grp__span"  [ngClass]="{'wrapper_grp__span-moving': isMoving, 'wrapper_valid-text': !valid()}">{{placeholder()}}</span>
+
+ 
 </div>

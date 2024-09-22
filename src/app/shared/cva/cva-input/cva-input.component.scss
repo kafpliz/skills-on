@@ -27,7 +27,7 @@
     border: 2px solid rgba(40, 113, 238, 1);
 }
 
-.wrapper_grp__label {
+.wrapper_grp__span {
     color: #797979;
     font-family: Roboto;
     font-size: 18px;
@@ -38,9 +38,10 @@
     left: 22px;
     top: 16px;
     transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    pointer-events: none;
 }
 
-.wrapper_grp__label-moving {
+.wrapper_grp__span-moving {
     font-size: 14px;
 
     top: -9px;
@@ -63,14 +64,5 @@
     right: 20px;
     top: 16px;
     font-size: 20px;
-    color: #FF8368;
-}
-
-.wrapper_grp__span {
-    font-family: Roboto;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
     color: #FF8368;
 }

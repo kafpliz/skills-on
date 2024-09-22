@@ -16,7 +16,7 @@ import { CvaInputComponent } from "../../../../../../shared/cva/cva-input/cva-in
   styleUrl: './update-password.component.scss'
 })
 export class UpdatePasswordComponent implements OnInit {
-  isMoving: boolean = false
+
   #fb = inject(FormBuilder)
 
   public formValid: boolean = true
@@ -34,14 +34,6 @@ export class UpdatePasswordComponent implements OnInit {
     })
   }
 
-  moveLabel() {
-    this.isMoving = true
-    this.formValid = true
-  }
-  checkInp() {
-
-
-  }
   send(){
     console.log(this.resetPaswordForm.value);
     

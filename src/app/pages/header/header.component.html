@@ -1,0 +1,26 @@
+<header class="header">
+   <div class="navbar">
+      <div class="logo">
+         <img src="/assets/logotips/skillson_logo.png" class="navbar_item__img" height="56px" alt="Img" srcset="">
+      </div>
+      <div class="navbar_item">
+         <a class="catalog__span" routerLink="/">Каталог курсов</a>
+      </div>
+      <div class="navbar_item search">
+         <input type="text" class="search__input" placeholder="Что хотите изучить?">
+         <div class="search_button">
+            <img src="/assets/icons/search.svg" class="navbar_item__img" alt="search icon" width="24px" srcset="">
+         </div>
+      </div>
+      <div class="navbar_item auth" *ngIf="!isLogin">
+         <a class="auth_link" routerLink="/auth/login">Вход</a>
+         <a class="auth_link" routerLink="/auth">Регистрация</a>
+      </div>
+
+      <div class="navbar_item profile-nav" *ngIf="isLogin">
+         <img src="/assets/icons/chat.svg" width="48" class="navbar_item__img" alt="" srcset="">
+         <img src="/assets/icons/avatar.svg" width="48" class="navbar_item__img" alt="" srcset="">
+
+      </div>
+   </div>
+</header>
