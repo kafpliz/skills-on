@@ -1,0 +1,38 @@
+<div class="course_category">
+    <h2 class="course_category_header">{{title() }}</h2>
+    <div class="course_category_cards">
+        <div class="course_category_card">
+            <div class="card_level" [ngClass]="getLevelClass()"></div>
+            <div class="card_description">
+                <div class="card_description_title">
+                    <span class="card_description_title__span">Frontend разработчик </span>
+                </div>
+                <div class="card_description_author">
+                    <span class="card_description_author__span">Автор:</span>
+                    <span class="card_description_author__span">Иван И.</span>
+                </div>
+                <div class="card_description_rewiews">
+                    <div class="card_description_rewiews__div">
+                        <img src="/assets/icons/star.svg" width="20" alt="" srcset="">
+                        <span class="card_description_rewiews__span">4,8</span>
+                    </div>
+                    <div class="card_description_rewiews__div">
+                        <img src="/assets/icons/rewiew.svg" width="20" alt="" srcset="">
+                        <span class="card_description_rewiews__span">23 отзыва</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card_price">
+                <span class="card_price__span">2 500 ₽</span>
+                <div class="card_price_button">
+                    <span class="card_price_button__span">Купить</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="course_category_btn">
+        <div class="course_category_btn__div">
+            <span class="course_category_btn__span">Показать больше</span>
+        </div>
+    </div>
+</div>

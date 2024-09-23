@@ -18,6 +18,7 @@ import { ResetPasswordComponent } from './pages/auth-page/components/reset-passw
 import { SendCodeComponent } from './pages/auth-page/components/reset-password/components/send-code/send-code.component';
 import { ConfirmPasswordComponent } from './pages/auth-page/components/reset-password/components/confirm-password/confirm-password.component';
 import { UpdatePasswordComponent } from './pages/auth-page/components/reset-password/components/update-password/update-password.component';
+import { CoursesCatalogComponent } from './pages/courses-catalog/courses-catalog.component';
 
 export const routes: Routes = [
   {
@@ -70,5 +71,6 @@ export const routes: Routes = [
     ]
   },
   { path: ERoutes.HOME, component: MainComponent },
+  { path: ERoutes.CATALOG, component: CoursesCatalogComponent },
 
 ];

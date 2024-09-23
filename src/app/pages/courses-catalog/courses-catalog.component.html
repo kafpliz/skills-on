@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <div class="routing">
+        <span class="routing__span">Главная / Каталог курсов</span>
+    </div>
+    <div class="popular"></div>
+    <div class="courses_container">
+        <div class="courses_filter"></div>
+        <app-course-category *ngFor="let item of categoryList" [title]="item.title"/>
+      
+    </div>
+</div>
