@@ -19,6 +19,7 @@ import { SendCodeComponent } from './pages/auth-page/components/reset-password/c
 import { ConfirmPasswordComponent } from './pages/auth-page/components/reset-password/components/confirm-password/confirm-password.component';
 import { UpdatePasswordComponent } from './pages/auth-page/components/reset-password/components/update-password/update-password.component';
 import { CoursesCatalogComponent } from './pages/courses-catalog/courses-catalog.component';
+import { CourseListComponent } from './pages/courses-catalog/components/course-list/course-list.component';
 
 export const routes: Routes = [
   {
@@ -59,11 +60,11 @@ export const routes: Routes = [
         path: ERoutes.RESET_PASSWORD,
         component: ResetPasswordComponent,
         children: [
-          {path: '', redirectTo: ERoutes.SEND, pathMatch: 'full'},
-          {path: ERoutes.SEND, component: SendCodeComponent},
-          {path: ERoutes.CONFIRM, component: ConfirmPasswordComponent},
-          {path: ERoutes.UPDATE, component: UpdatePasswordComponent},
-          {path: ERoutes.SUCCESSFULLY, component: SuccessfullyComponent},
+          { path: '', redirectTo: ERoutes.SEND, pathMatch: 'full' },
+          { path: ERoutes.SEND, component: SendCodeComponent },
+          { path: ERoutes.CONFIRM, component: ConfirmPasswordComponent },
+          { path: ERoutes.UPDATE, component: UpdatePasswordComponent },
+          { path: ERoutes.SUCCESSFULLY, component: SuccessfullyComponent },
         ]
       },
 
@@ -71,6 +72,13 @@ export const routes: Routes = [
     ]
   },
   { path: ERoutes.HOME, component: MainComponent },
-  { path: ERoutes.CATALOG, component: CoursesCatalogComponent },
+  {
+    path: ERoutes.CATALOG,
+    component: CoursesCatalogComponent,
+  },
+  {
+    path: ERoutes.CATALOG +'/:category',
+    component: CourseListComponent,
+  },
 
 ];

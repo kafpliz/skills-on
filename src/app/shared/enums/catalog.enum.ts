@@ -1,4 +1,5 @@
 export enum Catalog {
     courses = 'courses/',
-    CategoryList = 'category-list/'
+    CategoryList = 'category-list/',
+    
 }
