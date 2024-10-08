@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { RouterLink } from "@angular/router";
-import { ERoutes } from "../../../../shared/enums/routes.enum";
+import { ERoutes } from "../../../../shared/enums/routes/routes.enum";
 import { LocationBackDirective } from "../../../../shared/directives/location-back.directive";
 import { BackButtonComponent } from "../back-button/back-button.component";
 import { TRANSLATE_KEY_TOKEN } from "../../../../data/tokens/translate-key.token";

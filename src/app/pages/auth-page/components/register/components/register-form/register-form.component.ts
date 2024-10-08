@@ -1,5 +1,5 @@
 import { Component, inject, output, } from '@angular/core';
-import { ERoutes } from "../../../../../../shared/enums/routes.enum";
+import { ERoutes } from "../../../../../../shared/enums/routes/routes.enum";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from "@angular/forms";
 import { TranslocoDirective } from "@jsverse/transloco";
 import { ActivatedRoute, Route, Router, RouterLink } from "@angular/router";

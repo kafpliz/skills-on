@@ -5,7 +5,7 @@ import { AuthDataService } from '../../../../../../shared/auth-data.service';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../../../../core/services/auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ERoutes } from '../../../../../../shared/enums/routes.enum';
+import { ERoutes } from '../../../../../../shared/enums/routes/routes.enum';
 
 @Component({
   selector: 'app-email-confirm',

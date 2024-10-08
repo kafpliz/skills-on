@@ -1,20 +1,23 @@
-<div class="course_category">
-    <h2 class="course_category_header">{{category() }}</h2>
-    <div class="course_category_cards">
-      @for (course of courses; let idx = $index ; track idx) { 
-            @if (idx < 8) {
-                <app-course-card [course]="course"/>
+
+@for (items of courses; track $index) {
+    <div class="course_category">
+        <h2 class="course_category_header">{{items.title}}</h2>
+        <div class="course_category_cards">
+          @for (course of items.course; let idx = $index ; track idx) { 
+                @if (idx < 8) {
+                    <app-course-card [course]="course"/>
+                }
             }
-        }
-    </div>
-    <div class="course_category_btn">
-        <div class="course_category_btn__div">
-            @for (item of CategoryLink; track $index) {
-                    @if (category() == item.title) {
-                        <a class="course_category_btn__span" [routerLink]="item.path">Показать больше</a>
-                    }
-            }
-         
+        </div>
+        <div class="course_category_btn">
+            <div class="course_category_btn__div">
+                @for (item of CategoryLink; track $index) {
+                        @if (items.title == item.title) {
+                            <a class="course_category_btn__span" [routerLink]="'../' +item.path">Показать больше</a>
+                        }
+                }
+             
+            </div>
         </div>
     </div>
-</div>
+}

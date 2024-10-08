@@ -1,0 +1,27 @@
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 0 140px 30px;
+}
+
+.course_category__h1 {
+    font-family: BartinaRegular;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #2871EE;
+
+}
+.courses{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    gap: 40px;
+    grid-template-rows: 260px;
+    grid-template-columns: repeat(4, 260px);
+    justify-content: center;
+}

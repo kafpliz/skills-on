@@ -3,7 +3,7 @@ import { AuthService } from '../../../../../../core/services/auth/auth.service';
 import { splitArrayIntoChunks } from '../../../../../../shared/utils/allUtils';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ERoutes } from '../../../../../../shared/enums/routes.enum';
+import { ERoutes } from '../../../../../../shared/enums/routes/routes.enum';
 
 @Component({
   selector: 'app-select',

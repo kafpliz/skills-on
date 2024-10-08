@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../../../../core/services/auth/auth.service';
 import { IEnterCodeForm } from '../../../../../../data/interfaces/reset-password-form.interface';
 import { CommonModule } from '@angular/common';
-import { ERoutes } from '../../../../../../shared/enums/routes.enum';
+import { ERoutes } from '../../../../../../shared/enums/routes/routes.enum';
 
 @Component({
   selector: 'app-confirm-password',

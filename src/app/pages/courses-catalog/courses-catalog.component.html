@@ -2,10 +2,11 @@
     <div class="routing">
         <app-bread-crumb />
     </div>
-    <div class="popular"></div>
+    <app-popular-courses />
     <div class="courses_container">
         <div class="courses_filter"></div>
-        <app-course-category *ngFor="let item of categoryList" [category]="item.title"/>
-      
+
+        <router-outlet></router-outlet>
+
     </div>
 </div>

@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { IResetPasswordForm } from '../../../../../../data/interfaces/reset-password-form.interface';
 import { AuthService } from '../../../../../../core/services/auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ERoutes } from '../../../../../../shared/enums/routes.enum';
+import { ERoutes } from '../../../../../../shared/enums/routes/routes.enum';
 
 
 @Component({

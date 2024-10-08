@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import {ERoutes} from "../../shared/enums/routes/routes.enum";
 
 @Component({
   selector: 'app-header',
@@ -24,4 +25,5 @@ export class HeaderComponent {
     }
   }
 
+  protected readonly ERoutes = ERoutes;
 }

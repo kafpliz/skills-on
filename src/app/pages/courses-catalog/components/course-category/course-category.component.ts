@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, input, inject } from '@angular/core';
 import { CatalogService } from '../../../../core/services/catalog/catalog.service';
 import { CourseCardComponent } from "../course-card/course-card.component";
-import { ICategoryLink, ICourse } from '../../../../data/interfaces/courses-catalog.interface';
+import { ICategory, ICategoryLink, ICourse } from '../../../../data/interfaces/courses-catalog.interface';
 import { RouterLink } from '@angular/router';
 import { CategoryLink } from '../../../../data/constans/catalog-constans/catalog-link';
 
@@ -14,15 +14,25 @@ import { CategoryLink } from '../../../../data/constans/catalog-constans/catalog
   styleUrl: './course-category.component.scss'
 })
 export class CourseCategoryComponent {
-  public category = input('')
+ 
   #catalogService = inject(CatalogService)
-  courses: ICourse[] = []
-  CategoryLink:ICategoryLink[] = CategoryLink
+  courses: {title:string, course:ICourse[]}[]  = []
+  CategoryLink: ICategoryLink[] = CategoryLink
 
   ngOnInit() {
-    this.#catalogService.getCategoryCourse(this.category()).subscribe(data => {
-      this.courses = data
+    this.#catalogService.getCategoryList().subscribe(list => {
+      list.forEach(data => {
+        this.#catalogService.getCategoryCourse(data.title).subscribe(course => {
+          this.courses.push({title: data.title, course: course })
+          
+         
+        })
+       
+      })
+   
+      
     })
+    /* */
   }
 
 }

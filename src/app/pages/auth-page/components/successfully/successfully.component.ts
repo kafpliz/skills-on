@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { ERoutes } from '../../../../shared/enums/routes.enum';
+import { ERoutes } from '../../../../shared/enums/routes/routes.enum';
 
 @Component({
   selector: 'app-successfully',

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { RegisterComponent } from './pages/auth-page/components/register/register.component';
 import { LoginComponent } from './pages/auth-page/components/login/login.component';
-import { ERoutes } from "./shared/enums/routes.enum";
+import { ERoutes } from "./shared/enums/routes/routes.enum";
 import { AuthPageComponent } from "./pages/auth-page/auth-page.component";
 
 import {
@@ -20,6 +20,8 @@ import { ConfirmPasswordComponent } from './pages/auth-page/components/reset-pas
 import { UpdatePasswordComponent } from './pages/auth-page/components/reset-password/components/update-password/update-password.component';
 import { CoursesCatalogComponent } from './pages/courses-catalog/courses-catalog.component';
 import { CourseListComponent } from './pages/courses-catalog/components/course-list/course-list.component';
+import { CourseCategoryComponent } from './pages/courses-catalog/components/course-category/course-category.component';
+import { ECourses } from './shared/enums/routes/catalog.routes.enum';
 
 export const routes: Routes = [
   {
@@ -75,6 +77,17 @@ export const routes: Routes = [
   {
     path: ERoutes.CATALOG,
     component: CoursesCatalogComponent,
+    children:[
+      {
+        path: '',
+        redirectTo: ECourses.CATEGORY,
+        pathMatch: 'full'
+      },
+      {
+        path:ECourses.CATEGORY,
+        component: CourseCategoryComponent
+      }
+    ]
   },
   {
     path: ERoutes.CATALOG +'/:category',

@@ -1,0 +1,49 @@
+<div class="popular">
+    <div class="popular_header">
+        <h2 class="popular_header__h2">Популярные курсы</h2>
+    </div>
+    <div class="popular_swiper">
+        <swiper-container class="swiper" slides-per-view="auto" pagination="true" space-between="24"
+           >
+            @for (course of courses; track $index) {
+
+                <swiper-slide class="swiper-slide" >
+                    <div class="course_category_card">
+                        <div class="card_level" [ngClass]="getLevelClass(course.level)"><span class="card_level__span">{{course.level | levelTranslate}}</span></div>
+                        <div class="card_description">
+                            <div class="card_description_title">
+                                <span class="card_description_title__span">{{course.title}}</span>
+                            </div>
+                            <div class="card_description_author">
+                                <span class="card_description_author__span">Автор:</span>
+                                <span class="card_description_author__span">{{course.author_name}}</span>
+                            </div>
+                            <div class="card_description_rewiews">
+                                <div class="card_description_rewiews__div">
+                                    <img src="/assets/icons/star.svg" width="20" alt="" srcset="">
+                                    <span class="card_description_rewiews__span">{{course.rating}}</span>
+                                </div>
+                                <div class="card_description_rewiews__div">
+                                    <img src="/assets/icons/rewiew.svg" width="20" alt="" srcset="">
+                                    <span class="card_description_rewiews__span">{{course.comments_count}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_price">
+                            <span class="card_price__span">{{course.price}} ₽</span>
+                            <div class="card_price_button">
+                                <span class="card_price_button__span">Купить</span>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+
+            }
+
+
+
+
+
+        </swiper-container>
+    </div>
+</div>
