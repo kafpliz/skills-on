@@ -27,7 +27,7 @@ export class CourseListComponent {
           }
         })
        this.#service.getCourse(data.category).subscribe(coursesList=>{
-          this.courses = coursesList
+          this.courses = coursesList.results
        })
         
       })

@@ -23,7 +23,8 @@ export class CourseCategoryComponent {
     this.#catalogService.getCategoryList().subscribe(list => {
       list.forEach(data => {
         this.#catalogService.getCategoryCourse(data.title).subscribe(course => {
-          this.courses.push({title: data.title, course: course })
+          
+          this.courses.push({title: data.title, course: course.results })
           
          
         })
@@ -32,7 +33,6 @@ export class CourseCategoryComponent {
    
       
     })
-    /* */
   }
 
 }

@@ -19,7 +19,7 @@ export class PopularCoursesComponent {
   ngOnInit() {
     this.#service.getPopularCourse().subscribe(data => {
       console.log(data);
-      this.courses = data
+      this.courses = data.results
     })
   }
   getLevelClass(level: string) {
