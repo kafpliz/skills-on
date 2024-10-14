@@ -1,6 +1,7 @@
 
 export enum ECourses {
     CATALOG = 'courses',
-    CATEGORY = 'category'
+    CATEGORY = 'category',
+    COURSE = 'course'
   }
   

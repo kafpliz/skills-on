@@ -22,6 +22,7 @@ import { CoursesCatalogComponent } from './pages/courses-catalog/courses-catalog
 import { CourseListComponent } from './pages/courses-catalog/components/course-list/course-list.component';
 import { CourseCategoryComponent } from './pages/courses-catalog/components/course-category/course-category.component';
 import { ECourses } from './shared/enums/routes/catalog.routes.enum';
+import { CourseComponent } from './pages/courses-catalog/components/course/course.component';
 
 export const routes: Routes = [
   {
@@ -86,12 +87,19 @@ export const routes: Routes = [
       {
         path:ECourses.CATEGORY,
         component: CourseCategoryComponent
-      }
+      },
+     
     ]
   },
   {
     path: ERoutes.CATALOG +'/:category',
     component: CourseListComponent,
+    children: [
+      {
+        path: ':id',
+        component: CourseComponent
+      }
+    ]
   },
 
 ];

@@ -17,8 +17,8 @@ export class CatalogService {
     const baseParams = new HttpParams().set('category', category).set('allowable_price', allowable_price).set('level', level).set('order_by', order_by).set('title', title)
     return this.#http.get<IResCourse>('/api/' + this.#enum.courses, { params: baseParams })
   }
-  getCourse(category:string){
-    const params = new HttpParams().set('category',category)
+  getCourse(category:string, page:number = 1){
+    const params = new HttpParams().set('category',category).set('page', page)
     return this.#http.get<IResCourse>('/api/' +this.#enum.courses, {params} )
   }
   getPopularCourse(){
