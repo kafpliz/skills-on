@@ -1,12 +1,26 @@
 <div class="wrapper">
     <div class="routing">
         <app-bread-crumb />
+    
     </div>
     <app-popular-courses />
+    <app-courses-filter (searchList)="getSearchData($event)"/>
+  
     <div class="courses_container">
-        <div class="courses_filter"></div>
+        
+        @if (searchList) {
+            <div class="courses_card_container">
+                @for (item of searchList.results; track $index) {
+                    <app-course-card [course]="item"/>
+                }
+            </div>
 
-        <router-outlet></router-outlet>
+    
+        } @else {
+            <app-course-category />
+        }
+      
+      
 
     </div>
 </div>

@@ -2,38 +2,44 @@
     <h1 class="course_category__h1">{{title}}</h1>
     <div class="courses">
         @for (course of courses; track $index) {
-        <app-course-card [course]="course" [routerLink]="[ course.id]"/>
+        <app-course-card [course]="course" [routerLink]="[ course.id]" />
         }
     </div>
+    @if (pagesNum != 1) {
     <div class="pagination">
         @if (page != 1) {
-            <div class="pagination_last pagination_arrow" (click)="changePage(page - 1)">
-                <img src="/assets/icons/arrow_left.svg" alt="Icon" class="pagination_arrow__img pagination_last__img">
-            </div>
+        <div class="pagination_last pagination_arrow" (click)="changePage(page - 1)">
+            <img src="/assets/icons/arrow_left.svg" alt="Icon" class="pagination_arrow__img pagination_last__img">
+        </div>
         }
-      
+
 
         <div class="pagination_buttons">
             @for (item of pages; track $index; let idx = $index ) {
-            @if(idx < 4){ 
-                <div class="pagination_button" [ngClass]="item == page ? 'pagination_button-active' : '' "  (click)="changePage(item)">
-                    <span class="pagination_button__span">{{item}}</span>
-                </div>
+            @if(idx < 4){ <div class="pagination_button" [ngClass]="item == page ? 'pagination_button-active' : '' "
+                (click)="changePage(item)">
+                <span class="pagination_button__span">{{item}}</span>
+        </div>
+        }
         }
 
-        }
         <div class="pagination_button " (click)="changePage(page + 1)">
             <span class="pagination_button__span">...</span>
         </div>
+
         <div class="pagination_button " (click)="changePage(pages.at(-1) || 0)">
             <span class="pagination_button__span">{{pages.at(-1)}}</span>
         </div>
 
-
+        <div class="pagination_next pagination_arrow" (click)="changePage(page + 1)">
+            <img src="/assets/icons/arrow_left.svg" alt="Icon" class="pagination_arrow__img pagination_next__img">
+        </div>
 
     </div>
-    <div class="pagination_next pagination_arrow" (click)="changePage(page + 1)"> 
-        <img src="/assets/icons/arrow_left.svg" alt="Icon" class="pagination_arrow__img pagination_next__img">
-    </div>
+
+</div>
+}
+
+
 </div>
 <router-outlet />

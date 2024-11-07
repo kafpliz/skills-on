@@ -13,7 +13,7 @@
             <div class="course_category_btn__div">
                 @for (item of CategoryLink; track $index) {
                         @if (items.title == item.title) {
-                            <a class="course_category_btn__span" [routerLink]="'../' +item.path">Показать больше</a>
+                            <a class="course_category_btn__span" [routerLink]="[item.path]">Показать больше</a>
                         }
                 }
              

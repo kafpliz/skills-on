@@ -51,3 +51,14 @@ export const CategoryLink = [
         title: "Низкоуровневое программирование",
         path: "low-level-programming"
     }]
+
+export const OrderBy = [
+    { title: 'rating-high-to-low' },
+    { title: 'price-low-to-high' },
+    { title: 'price-high-to-low' },
+]
+export const Level = [
+    { title: 'low' },
+    { title: 'medium' },
+    { title: 'high' },
+]

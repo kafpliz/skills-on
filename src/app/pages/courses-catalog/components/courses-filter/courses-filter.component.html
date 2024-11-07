@@ -1,1 +1,101 @@
-<p>courses-filter works!</p>
+<div class="wrapper">
+    <div class="price">
+        <div class="price_container price_first">
+            <input class="price_item price_first" [value]="filter.price.min + ' ₽'" />
+            <span class="price_range__span">От: </span>
+        </div>
+
+
+        <div class="price_range">
+            <mat-slider [min]="0" [max]="100000">
+                <input matSliderStartThumb [(ngModel)]="filter.price.min">
+                <input matSliderEndThumb [(ngModel)]="filter.price.max">
+            </mat-slider>
+        </div>
+        <div class="price_container price_second">
+            <input class="price_item price_second" [value]="filter.price.max + ' ₽'" />
+            <span class="price_range__span">До: </span>
+        </div>
+
+    </div>
+
+    <div class="item" >
+        <div class="item-container" [ngClass]="{'item-container-open': openModalB[0] == true}">
+            <button class="item_btn item_container" (click)="openModal(0)">
+                <span class="item__span">Навык</span>
+                <img src="/assets/icons/arrow.svg" alt="" class="item__img" srcset="" width="24" height="24" [ngClass]="{'rotate__img': openModalB[0]}">
+            </button>
+
+            <div class="item_drop" [ngClass]="{'openDrop': openModalB[0]}">
+                <div class="item_drop-items">
+                    @for (item of dropCategory; track $index; let idx = $index) {
+                    <div class="items__div" (click)="addClass(idx, item.title)">
+                        <div class="checkbox">
+                            <img src="/assets/icons/check.svg" alt="" class="check "
+                                [ngClass]="{'check_active': checkStates[0] == idx}">
+                        </div>
+                        <span class="title">{{item.title}}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="item" >
+        <div class="item-container" [ngClass]="{'item-container-open': openModalB[1] == true}">
+            <button class="item_btn item_container" (click)="openModal(1)">
+                <span class="item__span">Уровень</span>
+                <img src="/assets/icons/arrow.svg" alt="" class="item__img" srcset="" width="24" height="24" [ngClass]="{'rotate__img': openModalB[1]}">
+            </button>
+
+            <div class="item_drop" [ngClass]="{'openDrop': openModalB[1]}">
+                <div class="item_drop-items">
+                    @for (item of level; track $index; let idx = $index) {
+                    <div class="items__div" (click)="addClass(idx, null, item.title)">
+                        <div class="checkbox">
+                            <img src="/assets/icons/check.svg" alt="" class="check "
+                                [ngClass]="{'check_active': checkStates[1] == idx}">
+                        </div>
+                        <span class="title">{{item.title | coursesTranslate}}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item" >
+        <div class="item-container" [ngClass]="{'item-container-open': openModalB[2] == true}">
+            <button class="item_btn item_container" (click)="openModal(2)">
+                <span class="item__span">Сортировать по</span>
+                <img src="/assets/icons/arrow.svg" alt="" class="item__img" srcset="" width="24" height="24" [ngClass]="{'rotate__img': openModalB[2]}">
+            </button>
+
+            <div class="item_drop" [ngClass]="{'openDrop': openModalB[2]}">
+                <div class="item_drop-items">
+                    @for (item of order; track $index; let idx = $index) {
+                    <div class="items__div" (click)="addClass(idx, null, null, item.title)">
+                        <div class="checkbox">
+                            <img src="/assets/icons/check.svg" alt="" class="check "
+                                [ngClass]="{'check_active': checkStates[2] == idx}">
+                        </div>
+                        <span class="title">{{item.title | coursesTranslate}}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="submit">
+        <div class="submit_reset">
+            <span class="submit_reset__span">Сбросить все</span>
+        </div>
+        <div class="submit_send " (click)="sendData()" [ngClass]="{'submit_send-active': this.filter.category || this.filter.level  || this.filter.order  || this.filter.price.max > 0 ? true : false}">
+            <span class="submit_send__span">Применить</span>
+        </div>
+    </div>
+    
+
+    
+</div>

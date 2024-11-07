@@ -3,8 +3,6 @@ export interface ICategory {
     title: string
 }
 
-
-
 export interface ICourse {
     id: number
     title: string
@@ -32,4 +30,13 @@ export interface ICategoryLink {
     path: string
 }
 
+export interface ICoursesDrop{
+    title: string
+}
 
+export interface ICoursesFiltr{
+    price:{min:number, max:number}
+    order:string
+    category:string
+    level:string
+}

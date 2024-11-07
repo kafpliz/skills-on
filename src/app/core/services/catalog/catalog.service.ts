@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { ECatalog } from '../../../shared/enums/catalog.enum';
-import { ICategory, ICourse, IResCourse } from '../../../data/interfaces/courses-catalog.interface';
+import { ICategory, ICourse, ICoursesFiltr, IResCourse } from '../../../data/interfaces/courses-catalog.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +25,12 @@ export class CatalogService {
     const params = new HttpParams().set('order_by', 'rating-high-to-low')
     return this.#http.get<IResCourse>('/api/' + this.#enum.courses, {params})
   }
-
+  getCourseByFilter(data:ICoursesFiltr){
+    const params = new HttpParams()
+    .set('order_by', data.order)
+    .set('level', data.level)
+    .set('category', data.category)
+    .set('price', `${data.price.min};${data.price.max}`)
+    return this.#http.get<IResCourse>('/api/' +this.#enum.courses, {params} )
+  }
 }

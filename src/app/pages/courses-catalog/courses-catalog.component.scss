@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0 140px;
+    padding: 0 140px 20px;
 }
 
 .routing {
@@ -29,3 +29,67 @@
     gap: 64px;
 }
 
+.courses_card_container{
+    width: 100%;
+    min-height: 100px;
+    display: grid;
+    gap: 40px;
+    grid-auto-rows: 260px;
+    grid-template-columns: repeat(4, 260px);
+    justify-content: center;
+}
+
+
+.pagination {
+    width: 100%;
+    min-height: 32px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.pagination_buttons {
+    width: fit-content;
+    height: 32px;
+    display: flex;
+    gap: 8px;
+
+    .pagination_button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        color: #283739;
+        .pagination_button__span {
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+          
+        }
+    }
+    .pagination_button-active{
+        background: #2871EE;
+        color: white;
+    }
+}
+
+.pagination_arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: all .3 ease-in-out;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+
+    .pagination_next__img {
+        transform: rotate(180deg);
+    }
+}
+
+.pagination_arrow:hover {
+    border: 1px solid #2871EE;
+}
