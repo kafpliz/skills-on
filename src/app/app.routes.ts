@@ -20,10 +20,8 @@ import { ConfirmPasswordComponent } from './pages/auth-page/components/reset-pas
 import { UpdatePasswordComponent } from './pages/auth-page/components/reset-password/components/update-password/update-password.component';
 import { CoursesCatalogComponent } from './pages/courses-catalog/courses-catalog.component';
 import { CourseListComponent } from './pages/courses-catalog/components/course-list/course-list.component';
-import { CourseCategoryComponent } from './pages/courses-catalog/components/course-category/course-category.component';
-import { ECourses } from './shared/enums/routes/catalog.routes.enum';
-import { CourseComponent } from './pages/courses-catalog/components/course/course.component';
-import { CoursesFilterComponent } from './pages/courses-catalog/components/courses-filter/courses-filter.component';
+import { CourseComponent } from './pages/course/course.component';
+
 
 export const routes: Routes = [
   {
@@ -79,13 +77,13 @@ export const routes: Routes = [
   {
     path: ERoutes.CATALOG,
     component: CoursesCatalogComponent,
-
-  
   },
   {
     path: ERoutes.CATALOG + '/:category',
     component: CourseListComponent,
-
   },
-
+  {
+    path: ERoutes.COURSE + '/:id',
+    component: CourseComponent
+  }
 ];

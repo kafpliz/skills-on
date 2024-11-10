@@ -105,7 +105,9 @@
         font-weight: 400;
         line-height: 20px;
     }
-
+    .item__span-active{
+        font-weight: bold;
+    }
     .item__img {
         position: absolute;
         right: 24px;
@@ -245,7 +247,7 @@
     margin-left:  auto;
     .submit_reset {
         flex: 1 1;
-
+        cursor: pointer;
         .submit_reset__span {
             font-family: Roboto;
             font-size: 18px;

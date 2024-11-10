@@ -6,7 +6,7 @@ import { IBreadcrumb } from '../../../data/interfaces/breadcrumb.interface';
 @Component({
   selector: 'app-bread-crumb',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './bread-crumb.component.html',
   styleUrl: './bread-crumb.component.scss'
 })

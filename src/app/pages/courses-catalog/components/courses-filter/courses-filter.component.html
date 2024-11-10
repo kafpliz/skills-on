@@ -22,7 +22,8 @@
     <div class="item" >
         <div class="item-container" [ngClass]="{'item-container-open': openModalB[0] == true}">
             <button class="item_btn item_container" (click)="openModal(0)">
-                <span class="item__span">Навык</span>
+                <span class="item__span" *ngIf="!items.skills">Навыки</span>
+                <span class="item__span item__span-active" *ngIf="items.skills">{{items.skills}}</span>
                 <img src="/assets/icons/arrow.svg" alt="" class="item__img" srcset="" width="24" height="24" [ngClass]="{'rotate__img': openModalB[0]}">
             </button>
 
@@ -45,7 +46,10 @@
     <div class="item" >
         <div class="item-container" [ngClass]="{'item-container-open': openModalB[1] == true}">
             <button class="item_btn item_container" (click)="openModal(1)">
-                <span class="item__span">Уровень</span>
+
+                <span class="item__span " *ngIf="!items.level">Уровень</span>
+                <span class="item__span item__span-active" *ngIf="items.level">{{items.level | coursesTranslate}}</span>
+
                 <img src="/assets/icons/arrow.svg" alt="" class="item__img" srcset="" width="24" height="24" [ngClass]="{'rotate__img': openModalB[1]}">
             </button>
 
@@ -64,10 +68,12 @@
             </div>
         </div>
     </div>
+
     <div class="item" >
         <div class="item-container" [ngClass]="{'item-container-open': openModalB[2] == true}">
             <button class="item_btn item_container" (click)="openModal(2)">
-                <span class="item__span">Сортировать по</span>
+                <span class="item__span" *ngIf="!items.order">Сортировать по</span>
+                <span class="item__span item__span-active" *ngIf="items.order">{{items.order | coursesTranslate}}</span>
                 <img src="/assets/icons/arrow.svg" alt="" class="item__img" srcset="" width="24" height="24" [ngClass]="{'rotate__img': openModalB[2]}">
             </button>
 
@@ -88,7 +94,7 @@
     </div>
 
     <div class="submit">
-        <div class="submit_reset">
+        <div class="submit_reset" (click)="clearAll()">
             <span class="submit_reset__span">Сбросить все</span>
         </div>
         <div class="submit_send " (click)="sendData()" [ngClass]="{'submit_send-active': this.filter.category || this.filter.level  || this.filter.order  || this.filter.price.max > 0 ? true : false}">

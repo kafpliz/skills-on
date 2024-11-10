@@ -12,7 +12,7 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 @Component({
   selector: 'app-courses-catalog',
   standalone: true,
-  imports: [CommonModule, CourseCategoryComponent, BreadCrumbComponent, RouterOutlet, PopularCoursesComponent, CoursesFilterComponent, CourseCardComponent],
+  imports: [CommonModule, CourseCategoryComponent, BreadCrumbComponent, PopularCoursesComponent, CoursesFilterComponent, CourseCardComponent],
   templateUrl: './courses-catalog.component.html',
   styleUrl: './courses-catalog.component.scss'
 })

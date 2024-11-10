@@ -9,5 +9,6 @@ export enum ERoutes {
   RESET_PASSWORD = 'reset',
   SEND = 'send',
   UPDATE = 'update',
-  CATALOG = 'courses'
+  CATALOG = 'courses',
+  COURSE = 'course'
 }

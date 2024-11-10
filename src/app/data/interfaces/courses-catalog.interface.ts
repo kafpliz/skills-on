@@ -19,9 +19,9 @@ export interface ICourse {
     rating: string,
     comments_count: number
 }
-export interface IResCourse{
-    pages:number,
-    page:number,
+export interface IResCourse {
+    pages: number,
+    page: number,
     results: ICourse[]
 }
 
@@ -30,13 +30,19 @@ export interface ICategoryLink {
     path: string
 }
 
-export interface ICoursesDrop{
+export interface ICoursesDrop {
     title: string
 }
 
-export interface ICoursesFiltr{
-    price:{min:number, max:number}
-    order:string
-    category:string
-    level:string
+export interface ICoursesFiltr {
+    price: { min: number, max: number }
+    order: string
+    category: string
+    level: string
+}
+
+export interface ICourseItem {
+    skills: string | null
+    level: string | null
+    order: string | null
 }

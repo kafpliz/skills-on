@@ -3,11 +3,12 @@ import { CatalogService } from '../../../../core/services/catalog/catalog.servic
 import { ICourse } from '../../../../data/interfaces/courses-catalog.interface';
 import { CommonModule } from '@angular/common';
 import { LevelTranslatePipe } from '../../../../core/pipes/level-translate.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-popular-courses',
   standalone: true,
-  imports: [CommonModule, LevelTranslatePipe],
+  imports: [CommonModule, LevelTranslatePipe, RouterLink],
   templateUrl: './popular-courses.component.html',
   styleUrl: './popular-courses.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

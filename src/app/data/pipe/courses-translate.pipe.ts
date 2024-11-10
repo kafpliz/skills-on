@@ -29,7 +29,7 @@ export class CoursesTranslatePipe implements PipeTransform {
     
       default:
         return ''
-        break;
+       
     }
   }
 

@@ -8,7 +8,7 @@
             @for (course of courses; track $index) {
 
                 <swiper-slide class="swiper-slide" >
-                    <div class="course_category_card">
+                    <div class="course_category_card" [routerLink]="['../course',course.id]">
                         <div class="card_level" [ngClass]="getLevelClass(course.level)"><span class="card_level__span">{{course.level | levelTranslate}}</span></div>
                         <div class="card_description">
                             <div class="card_description_title">
