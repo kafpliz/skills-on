@@ -5,7 +5,7 @@
         <div class="course_category_cards">
           @for (course of items.course; let idx = $index ; track idx) { 
                 @if (idx < 8) {
-                    <app-course-card [course]="course"/>
+                    <app-course-card [course]="course" [routerLink]="['../course',course?.id]"/>
                 }
             }
         </div>

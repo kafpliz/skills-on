@@ -3,7 +3,6 @@ import { Component,input } from '@angular/core';
 import { ICourse } from '../../../../data/interfaces/courses-catalog.interface';
 import { EndingFixPipe } from '../../../../core/pipes/ending-fix.pipe';
 import { LevelTranslatePipe } from '../../../../core/pipes/level-translate.pipe';
-
 @Component({
   selector: 'app-course-card',
   standalone: true,

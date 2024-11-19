@@ -2,7 +2,7 @@
     <h1 class="course_category__h1">{{title}}</h1>
     <div class="courses">
         @for (course of courses; track $index) {
-        <app-course-card [course]="course" [routerLink]="[ course.id]" />
+        <app-course-card [course]="course" [routerLink]="['../../course',course?.id]"/>
         }
     </div>
     @if (pagesNum != 1) {
