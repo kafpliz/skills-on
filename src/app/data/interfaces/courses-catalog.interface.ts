@@ -3,7 +3,7 @@ export interface ICategory {
     title: string
 }
 
-export interface ICourse {
+export interface ICatalogCourse {
     id: number
     title: string
     level: string
@@ -17,12 +17,12 @@ export interface ICourse {
     price: string
     students_coun: number
     rating: string,
-    comments_count: number
+    comments_count: number      
 }
 export interface IResCourse {
     pages: number,
     page: number,
-    results: ICourse[]
+    results: ICatalogCourse[]
 }
 
 export interface ICategoryLink {

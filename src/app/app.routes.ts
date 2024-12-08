@@ -20,7 +20,8 @@ import { ConfirmPasswordComponent } from './pages/auth-page/components/reset-pas
 import { UpdatePasswordComponent } from './pages/auth-page/components/reset-password/components/update-password/update-password.component';
 import { CoursesCatalogComponent } from './pages/courses-catalog/courses-catalog.component';
 import { CourseListComponent } from './pages/courses-catalog/components/course-list/course-list.component';
-import { CourseComponent } from './pages/course/course.component';
+import { NotPurchasedCourseComponent } from './pages/not-purchased-course/not-purchased-course.component';
+
 
 
 export const routes: Routes = [
@@ -84,6 +85,6 @@ export const routes: Routes = [
   },
   {
     path: ERoutes.COURSE + '/:id',
-    component: CourseComponent
+    component: NotPurchasedCourseComponent
   }
 ];

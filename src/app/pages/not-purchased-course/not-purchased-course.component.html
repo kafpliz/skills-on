@@ -1,1 +1,123 @@
-<p>not-purchased-course works!</p>
+<div class="wrapper">
+    <div class="z-wrapper">
+        <div class="container">
+            <div class="container_item header">
+                <h4 class="container_item__h4">{{course?.title}}</h4>
+                <div class="price">
+                    <span class="gl-item__span">{{course?.price}} ₽</span>
+
+                    <button class="container_item__btn"><span class="gl-item__span gl-item__span-white">Купить
+                            курс</span></button>
+                </div>
+            </div>
+            <div class="container_item author">
+                <div class="container_item_block">
+                    <h4 class="container_item__h4">Автор курса</h4>
+                    <div class="author_info">
+                        @if (course?.author_image == null) {
+                        <div class="user__img">
+                            <svg class="user__img-svg" viewBox="0 0 48 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="user icon">
+                                    <path id="Vector"
+                                        d="M24 26C29.5228 26 34 21.5228 34 16C34 10.4772 29.5228 6 24 6C18.4772 6 14 10.4772 14 16C14 21.5228 18.4772 26 24 26ZM24 26C28.2435 26 32.3131 27.6857 35.3137 30.6863C38.3143 33.6869 40 37.7565 40 42M24 26C19.7565 26 15.6869 27.6857 12.6863 30.6863C9.68571 33.6869 8 37.7565 8 42"
+                                        stroke="#F5F5F5" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </div>
+                        }
+
+                        <span class="gl-item__span gl-item__span-dark">{{course?.author_name}}</span>
+                    </div>
+                </div>
+                <div class="container_item_block">
+                    <span class="gl-item__span gl-item__span-text">Вы можете связаться с автором, чтобы
+                        задать
+                        вопрос по курсу и уточнить интересующую вас информацию</span>
+                </div>
+                <div class="container_item_block connect">
+                    <div class="connect_author">
+                        <span class="gl-item__span gl-item__span-white">Связаться с автором</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container_item description">
+                <h4 class="container_item__h4">Описание</h4>
+                <span class="gl-item__span gl-item__span-text">{{course?.description}}</span>
+            </div>
+
+            <div class="container_item content">
+                <h4 class="container_item__h4">Содержание курса</h4>
+
+                <div class="lessons">
+                    @for (item of course?.lessons; track $index) {
+                    <div class="lesson">
+                        <div class="lesson_index">
+                            <span class="lesson_index__span">{{ $index + 1}}</span>
+                        </div>
+                        <span class="gl-item__span gl-item__span-text gl-item__span-text_bold">{{item.title}}</span>
+                    </div>
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (course?.comments) {
+    <div class="reviews">
+        <h2 class="reviews__h2">Отзывы о курсе</h2>
+        <div class="content">
+            <swiper-container class="swiper" slides-per-view="3" space-between="24">
+
+                @for (comment of course?.comments; track $index) {
+                <swiper-slide class="swiper-slide">
+                    <div class="head">
+                        @if (comment.author_image == null) {
+                        <div class="user__img head_img">
+                            <svg class="user__img-svg" viewBox="0 0 48 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g id="user icon">
+                                    <path id="Vector"
+                                        d="M24 26C29.5228 26 34 21.5228 34 16C34 10.4772 29.5228 6 24 6C18.4772 6 14 10.4772 14 16C14 21.5228 18.4772 26 24 26ZM24 26C28.2435 26 32.3131 27.6857 35.3137 30.6863C38.3143 33.6869 40 37.7565 40 42M24 26C19.7565 26 15.6869 27.6857 12.6863 30.6863C9.68571 33.6869 8 37.7565 8 42"
+                                        stroke="#F5F5F5" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </div>
+                        }
+                        <div class="head_user">
+                            <span class="gl-item__span gl-item__span-text_bold">{{comment.author_name}}</span>
+                            <div class="">
+                                <span class="reviews__span">Курс: </span>
+                                <span class="reviews__span reviews__span-blue">{{comment.course}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        @for (item of getRating(comment.rating); track $index) {
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="icon">
+                                <path id="Vector"
+                                    d="M12 3.9021L14.472 8.9101L20 9.7181L16 13.6141L16.944 19.1181L12 16.5181L7.056 19.1181L8 13.6141L4 9.7181L9.528 8.9101L12 3.9021Z"
+                                    fill="#6F97FF" stroke="#6F97FF" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                        </svg>
+                        }
+
+                    </div>
+                    <div class="description">
+                        <span class="gl-item__span gl-item__span-text">{{comment.body}}</span>
+                    </div>
+                </swiper-slide>
+                }
+            </swiper-container>
+        </div>
+    </div>
+    }
+
+</div>

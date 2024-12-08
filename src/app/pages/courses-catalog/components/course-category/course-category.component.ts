@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, input, inject } from '@angular/core';
 import { CatalogService } from '../../../../core/services/catalog/catalog.service';
 import { CourseCardComponent } from "../course-card/course-card.component";
-import { ICategory, ICategoryLink, ICourse } from '../../../../data/interfaces/courses-catalog.interface';
+import { ICategory, ICategoryLink, ICatalogCourse } from '../../../../data/interfaces/courses-catalog.interface';
 import { RouterLink } from '@angular/router';
 import { CategoryLink } from '../../../../data/constans/catalog-constans/catalog';
 import { ERoutes } from '../../../../shared/enums/routes/routes.enum';
@@ -17,7 +17,7 @@ import { ERoutes } from '../../../../shared/enums/routes/routes.enum';
 export class CourseCategoryComponent {
   ERoutes = ERoutes
   #catalogService = inject(CatalogService)
-  courses: {title:string, course:ICourse[]}[]  = []
+  courses: {title:string, course:ICatalogCourse[]}[]  = []
   CategoryLink: ICategoryLink[] = CategoryLink
 
   ngOnInit() {

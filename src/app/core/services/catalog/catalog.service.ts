@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { ECatalog } from '../../../shared/enums/catalog.enum';
-import { ICategory, ICourse, ICoursesFiltr, IResCourse } from '../../../data/interfaces/courses-catalog.interface';
+import { ICategory,  ICoursesFiltr, IResCourse } from '../../../data/interfaces/courses-catalog.interface';
 
 @Injectable({
   providedIn: 'root'

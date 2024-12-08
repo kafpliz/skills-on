@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component,input } from '@angular/core';
-import { ICourse } from '../../../../data/interfaces/courses-catalog.interface';
+import { ICatalogCourse } from '../../../../data/interfaces/courses-catalog.interface';
 import { EndingFixPipe } from '../../../../core/pipes/ending-fix.pipe';
 import { LevelTranslatePipe } from '../../../../core/pipes/level-translate.pipe';
 @Component({
@@ -12,7 +12,7 @@ import { LevelTranslatePipe } from '../../../../core/pipes/level-translate.pipe'
 })
 export class CourseCardComponent {
 
-  public readonly course = input<ICourse>()
+  public readonly course = input<ICatalogCourse>()
 
   getLevelClass() {
     return 'level-' + this.course()?.level

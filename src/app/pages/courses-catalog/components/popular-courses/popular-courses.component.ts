@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, inject } from '@angular/core';
 import { CatalogService } from '../../../../core/services/catalog/catalog.service';
-import { ICourse } from '../../../../data/interfaces/courses-catalog.interface';
+import { ICatalogCourse } from '../../../../data/interfaces/courses-catalog.interface';
 import { CommonModule } from '@angular/common';
 import { LevelTranslatePipe } from '../../../../core/pipes/level-translate.pipe';
 import { RouterLink } from '@angular/router';
@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PopularCoursesComponent {
-  courses: ICourse[] = []
+  courses: ICatalogCourse[] = []
   #service = inject(CatalogService)
 
   ngOnInit() {

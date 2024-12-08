@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
-import { ICategoryLink, ICourse } from '../../../../data/interfaces/courses-catalog.interface';
+import { ICategoryLink, ICatalogCourse } from '../../../../data/interfaces/courses-catalog.interface';
 import { CategoryLink } from '../../../../data/constans/catalog-constans/catalog';
 import { CatalogService } from '../../../../core/services/catalog/catalog.service';
 import { CourseCardComponent } from "../course-card/course-card.component";
@@ -17,7 +17,7 @@ export class CourseListComponent {
   #router = inject(ActivatedRoute)
   public title: string = ''
   categorys: ICategoryLink[] = CategoryLink
-  courses: ICourse[] = []
+  courses: ICatalogCourse[] = []
   #service = inject(CatalogService)
   pages: number[] = []
   pagesNum:number = 1;
